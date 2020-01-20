@@ -6,10 +6,10 @@ import '../main.dart';
 //import 'package:flutter/src/material/toggle_buttons.dart';
 
 class SecondPage extends StatelessWidget {
-  get isSelected => isSelected;
 
   @override
   Widget build(BuildContext context) {
+    List<bool> _selection = List.generate(2, (_) => false);
     // TODO: implement build
     return Scaffold(
       body: Container(
@@ -63,17 +63,20 @@ class SecondPage extends StatelessWidget {
                                 offset: Offset(0, 10)
                             )]
                         ),
-                        child: TextInputField(),
                       ),
                       SizedBox(height: 40,),
                       Container(
                         child: ToggleButtons(
-                          onPressed: isSelected,
                           children: <Widget>[
                             Icon(Icons.minimize),
                             Icon(Icons.add),
                           ],
-                          isSelected: isSelected,
+                          isSelected: _selection,
+                          onPressed: (int index) {
+                          setState(() {
+                              _selection[index] = !_selection[index];
+                            });
+                          },
                         ),
                       ),
                     ],
@@ -86,7 +89,12 @@ class SecondPage extends StatelessWidget {
       ),
     );
   }
+
+  void setState(Null Function() param0) {}
+
 }
+
+
 void main() {
   FlutterError.onError = (FlutterErrorDetails details) {
     FlutterError.dumpErrorToConsole(details);
