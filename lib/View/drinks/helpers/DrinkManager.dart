@@ -23,19 +23,24 @@ class DrinkManager {
 
   double get currentDrinkPrice => _currentDrinkPrice;
 
-  /// DrinkList [newDrink] - The Drink which is ordered.
   /// int [index] - The amount of drinks ordered.
+  /// DrinkList [newDrink] - The Drink which is ordered.
   void add(DrinksList newDrink, int index) {
     for (var i = 0; i < index; i++) {
       this.orderList.add(newDrink);
-    }
-    this.update();
+    } this.update();
   }
 
-  /// DrinkList [Drink] - Which drink to deplete.
+  /// DrinkList [drink] - Which drink to deplete.
   void remove(DrinksList drink) {
     this.orderList.remove(drink);
     this.update();
+  }
+
+  /// Returns Clears the order list.
+  void clear() {
+    this._currentDrinkPrice = 0.00;
+    this.orderList.clear();
   }
 
   /// Returns [double] - Update the current order price.
