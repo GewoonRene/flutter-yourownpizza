@@ -67,6 +67,7 @@ class DrinkManager {
     }
 
     return this.currentDrinkPrice;
+
   }
 
 }

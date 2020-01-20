@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:yourownpizza/View/drinks/helpers/DrinkManager.dart';
 import '../helpers/constants.dart';
 
-class Dranken extends StatelessWidget {
+class Drinks extends StatelessWidget {
+
+  DrinkManager manager = new DrinkManager();
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -14,7 +17,7 @@ class Dranken extends StatelessWidget {
             colors: [
               Colors.orange[900],
               Colors.orange[800],
-              Colors.orange[400]
+              Colors.black
             ],
           ),
         ),
@@ -34,6 +37,7 @@ class Dranken extends StatelessWidget {
             ),
           ],
         ),
+
       ),
     );
   }
