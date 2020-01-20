@@ -1,8 +1,10 @@
 
 /*
- * Drinks, Predefined.
+ * Stores items inside a list and translate it into an json.
+ * @author GewoonRené - https://github.com/GewoonRene
  * * * */
-enum Drinks {
+
+enum DrinksList {
   Cola,
   Sprite,
   Beer,
@@ -12,27 +14,60 @@ enum Drinks {
 }
 
 /*
- * DrinkManager, stores the order.
+ * Drink Manger, manage the amount of drinks added to the order.
  * * * */
 class DrinkManager {
 
-  List _order = [];
+  double _currentDrinkPrice = 0.00;
+  List<DrinksList> orderList = [];
 
-  /// Add an order to the list.
-  void addOrder(Drinks newDrink) {
-    this._order.add(newDrink);
+  double get currentDrinkPrice => _currentDrinkPrice;
+
+  /// DrinkList [newDrink] - The Drink which is ordered.
+  /// int [index] - The amount of drinks ordered.
+  void add(DrinksList newDrink, int index) {
+    for (var i = 0; i < index; i++) {
+      this.orderList.add(newDrink);
+    }
+    this.update();
   }
 
-  // Get the final order.
-  List getOrder() {
-    return this._order;
+  /// DrinkList [Drink] - Which drink to deplete.
+  void remove(DrinksList Drink) {
+    this.orderList.remove(Drink);
+    this.update();
   }
 
-  // Create a new order.
-  void setOrder(newOrder) {
-    this._order = newOrder;
-  }
+  /// Returns [double] - Update the current order price.
+  double update() {
+    for (var drink in this.orderList) {
+      switch(drink) {
+        case DrinksList.Cola:
+          this._currentDrinkPrice += 1.00;
+          break;
+        case DrinksList.Sprite:
+          this._currentDrinkPrice += 1.00;
+          break;
+        case DrinksList.Beer:
+          this._currentDrinkPrice += 2.40;
+          break;
+        case DrinksList.Wine:
+          this._currentDrinkPrice += 4.20;
+          break;
+        case DrinksList.Coffee:
+          this._currentDrinkPrice += 1.50;
+          break;
+        case DrinksList.Thea:
+          this._currentDrinkPrice += 0.90;
+          break;
+        default:
+          this._currentDrinkPrice += 0.00;
+          break;
+      }
+    }
 
+    return this.currentDrinkPrice;
+  }
 
 }
 
