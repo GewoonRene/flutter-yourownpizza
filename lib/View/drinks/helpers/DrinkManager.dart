@@ -33,8 +33,8 @@ class DrinkManager {
   }
 
   /// DrinkList [Drink] - Which drink to deplete.
-  void remove(DrinksList Drink) {
-    this.orderList.remove(Drink);
+  void remove(DrinksList drink) {
+    this.orderList.remove(drink);
     this.update();
   }
 
