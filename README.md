@@ -8,7 +8,7 @@ Dit is een mobiele app die digitaal bestellingen kan afnemen van de klanten voor
 * **[ScrumBoard](https://github.com/GewoonRene/yourownpizza/projects/2)** 
 * **[Backlog](https://github.com/GewoonRene/yourownpizza/issues)** 
 
-* **[Documentatie](https://github.com/GewoonRene/yourownpizza/tree/master/documentatie)**
+* **[Documentatie](https://github.com/GewoonRene/yourownpizza/tree/master/documentation)**
 * **[Design](https://github.com/GewoonRene/yourownpizza/tree/master/design)**
 * **[App](https://github.com/GewoonRene/yourownpizza/tree/master)**
 
