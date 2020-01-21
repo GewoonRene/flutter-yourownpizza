@@ -15,13 +15,12 @@ enum DrinksList {
 
 /*
  * Drink Manger, manage the amount of drinks added to the order.
+ * And translate's the order to json for the API.
  * * * */
 class DrinkManager {
 
   double _currentDrinkPrice = 0.00;
   List<DrinksList> orderList = [];
-
-  double get currentDrinkPrice => _currentDrinkPrice;
 
   /// int [index] - The amount of drinks ordered.
   /// DrinkList [newDrink] - The Drink which is ordered.
@@ -31,10 +30,18 @@ class DrinkManager {
     } this.update();
   }
 
+  /// @ToDo: Fix removing the right Drink / Amount;
   /// DrinkList [drink] - Which drink to deplete.
   void remove(DrinksList drink) {
     this.orderList.remove(drink);
     this.update();
+  }
+
+  /// @ToDo: Make this function dynamic;
+  /// Drink List [orderList] - The final order to send to the api.
+  Map sendDrinkOrder(List<DrinksList> orderList) {
+    Map finalOrder = {"Drinks": { 1: orderList[0], 2: orderList[1] } };
+    return finalOrder;
   }
 
   /// Returns Clears the order list.
@@ -48,8 +55,6 @@ class DrinkManager {
     for (var drink in this.orderList) {
       switch(drink) {
         case DrinksList.Cola:
-          this._currentDrinkPrice += 1.00;
-          break;
         case DrinksList.Sprite:
           this._currentDrinkPrice += 1.00;
           break;
@@ -71,7 +76,7 @@ class DrinkManager {
       }
     }
 
-    return this.currentDrinkPrice;
+    return this._currentDrinkPrice;
 
   }
 
