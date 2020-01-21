@@ -4,6 +4,7 @@
  * @author GewoonRené - https://github.com/GewoonRene
  * * * */
 
+/// Contains all the selectable drinks.
 enum DrinksList {
   Cola,
   Sprite,
@@ -13,46 +14,53 @@ enum DrinksList {
   Thea
 }
 
-/*
- * Drink Manger, manage the amount of drinks added to the order.
- * And translate's the order to json for the API.
- * * * */
+/// ....
+/// class [DrinkManager] - A tool to help store and process the
+/// drink ordered from the 'Drinks View'.
+
+/// [add] Method - Adds New drinks to the [_orderList].
+/// [remove] Method - Removes a drink from the [_orderList].
+/// [sendDrinkOrder] Method - Converts the [_orderList] into JSON.
+/// [clear] Method - Clears/Empties the current [orderList].
+/// [update] Method - Update's the [_currentDrinkPrice] according to the [_orderList].
+///
+/// ....
 class DrinkManager {
 
+  /// The current drink price of the instance.
   double _currentDrinkPrice = 0.00;
-  List<DrinksList> orderList = [];
+  /// The current order list which only contains of [DrinksList]
+  List<DrinksList> _orderList = [];
 
-  /// int [index] - The amount of drinks ordered.
-  /// DrinkList [newDrink] - The Drink which is ordered.
+  /// DrinkList [newDrink] - New drink to add.
+  /// int [index] - The amount of drink.
   void add(DrinksList newDrink, int index) {
     for (var i = 0; i < index; i++) {
-      this.orderList.add(newDrink);
+      this._orderList.add(newDrink);
     } this.update();
   }
 
   /// @ToDo: Fix removing the right Drink / Amount;
-  /// DrinkList [drink] - Which drink to deplete.
+  /// DrinkList [drink] - The kind of drink which needs to deplete/delete.
   void remove(DrinksList drink) {
-    this.orderList.remove(drink);
+    this._orderList.remove(drink);
     this.update();
   }
 
   /// @ToDo: Make this function dynamic;
-  /// Drink List [orderList] - The final order to send to the api.
+  /// List<DrinkList> [orderList] - The current orderList from the instance.
   Map sendDrinkOrder(List<DrinksList> orderList) {
     Map finalOrder = {"Drinks": { 1: orderList[0], 2: orderList[1] } };
     return finalOrder;
   }
 
-  /// Returns Clears the order list.
   void clear() {
     this._currentDrinkPrice = 0.00;
-    this.orderList.clear();
+    this._orderList.clear();
   }
 
-  /// Returns [double] - Update the current order price.
   double update() {
-    for (var drink in this.orderList) {
+    for (var drink in this._orderList) {
       switch(drink) {
         case DrinksList.Cola:
         case DrinksList.Sprite:
@@ -81,4 +89,5 @@ class DrinkManager {
   }
 
 }
+
 
