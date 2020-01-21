@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../main.dart';
 import '../View/Shared/Bottombar.dart';
 
 class FirstPage extends StatelessWidget {
@@ -69,8 +68,7 @@ class FirstPage extends StatelessWidget {
                 ),
               ),
             ),
-            BottomAppBar(
-              color: Colors.black,
+            Container(
               child: BottomBar(),
             ),
           ],
