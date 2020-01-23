@@ -33,19 +33,20 @@ class Drinks extends StatelessWidget {
             SizedBox(height: 100,),
             Expanded(
               child: Container(
-                width: 5000,
+                width: double.infinity,
+                padding: new EdgeInsets.all(50.0),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(roundedCorners), topRight: Radius.circular(roundedCorners),),
                 ),
+                child: new ListView.builder(
+                  itemBuilder: (BuildContext ctx, int index) {
+                    return new DrinksInTiles(DrinkTileStructure[index]);
+                  },
+                  itemCount: DrinkTileStructure.length,
+                ),
               ),
             ),
-            new ListView.builder(
-                itemBuilder: (BuildContext ctx, int index) {
-                  return new DrinksInTiles(DrinkTileStructure[index]);
-                },
-              itemCount: DrinkTileStructure.length,
-            )
           ],
         ),
       ),

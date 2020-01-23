@@ -3,42 +3,51 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // Struct
-class DrinkTile {
-  String title;
-  DrinkTile(this.title);
-}
+//class DrinkTile {
+//  String title;
+//  List<DrinkTileRow> children;
+//  DrinkTile(this.title, [this.children = const <DrinkTileRow>[]]);
+//}
 
 // Struct
 class DrinkTileRow {
   String title;
-  List<DrinkTile> children;
-  DrinkTileRow(this.title, [this.children = const <DrinkTile>[]]);
+  List<DrinkTileRow> children;
+  DrinkTileRow(this.title, [this.children = const <DrinkTileRow>[]]);
 }
 
 // Drink tile structure
 List<DrinkTileRow> DrinkTileStructure = <DrinkTileRow>[
   new DrinkTileRow(
-    'FrisDranken',
-    <DrinkTile>[
-      new DrinkTile('Cola'),
-      new DrinkTile('Sinas'),
-      new DrinkTile('Sprite')
+    'Fris dranken',
+    <DrinkTileRow>[
+      new DrinkTileRow('Cola'),
+      new DrinkTileRow('Sinas'),
+      new DrinkTileRow('Sprite')
     ],
   ),
   new DrinkTileRow(
-    'FrisDranken',
-    <DrinkTile>[
-      new DrinkTile('Irish Koffie'),
-      new DrinkTile('Espresso'),
-      new DrinkTile('Koffie Verkeerd')
+    'Koffie & Thee',
+    <DrinkTileRow>[
+      new DrinkTileRow('Irish Koffie'),
+      new DrinkTileRow('Espresso'),
+      new DrinkTileRow('Koffie Verkeerd')
     ],
   ),
   new DrinkTileRow(
     'Wijnen',
-    <DrinkTile>[
-      new DrinkTile('Witte Wijn'),
-      new DrinkTile('Droge Witte Wijn'),
-      new DrinkTile('Nog Drogere Wittere Wijn')
+    <DrinkTileRow>[
+      new DrinkTileRow('Witte Wijn'),
+      new DrinkTileRow('Droge Witte Wijn'),
+      new DrinkTileRow('Nog Drogere Wittere Wijn')
+    ],
+  ),
+  new DrinkTileRow(
+    'Bieren & Dranken',
+    <DrinkTileRow>[
+      new DrinkTileRow('Bier'),
+      new DrinkTileRow('0.0'),
+      new DrinkTileRow('Rum')
     ],
   ),
 ];
@@ -63,10 +72,44 @@ class DrinksInTiles extends StatelessWidget {
       title: new Text(row.title),
 
       // @ToDo Fix if multiple rows is needed.
-      // children: row.children.map(_buildTiles).toList()
+       children: row.children.map(_buildTiles).toList()
 
     );
 
+  }
+
+}
+
+class DrinkGridTiles extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 1000,
+      child: GridView.count(
+        primary: false,
+        crossAxisCount: 3,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        children: <Widget>[
+          // ToDo: Make seperate widget.
+          Container(
+            padding: const EdgeInsets.all(8),
+            child: const Text('He\'d have you all unravel at the'),
+            color: Colors.teal[100],
+          ),
+          Container(
+            padding: const EdgeInsets.all(8),
+            child: const Text('Heed not the rabble'),
+            color: Colors.teal[200],
+          ),
+          Container(
+            padding: const EdgeInsets.all(8),
+            child: const Text('Sound of screams but the'),
+            color: Colors.teal[300],
+          ),
+        ],
+      ),
+    );
   }
 
 }
