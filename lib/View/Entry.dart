@@ -21,21 +21,31 @@ class FirstPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            SizedBox(height: 80.0,),
+            SizedBox(
+              height: 80.0,
+            ),
             Padding(
               padding: EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text("LOGO?",
-                    style: TextStyle(color: Colors.white, fontSize: 40),),
-                  SizedBox(height: 10,),
-                  Text("Yout own pizza",
-                    style: TextStyle(color: Colors.white, fontSize: 20),),
+                  Text(
+                    "LOGO?",
+                    style: TextStyle(color: Colors.white, fontSize: 40),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Yout own pizza",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
                 ],
               ),
             ),
-            SizedBox(height: 200,),
+            SizedBox(
+              height: 200,
+            ),
             Expanded(
               child: Container(
                 width: 5000,
@@ -43,29 +53,28 @@ class FirstPage extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(60),
-                    topRight: Radius.circular(60),),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20),
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(height: 150,),
-                      Container(
-                        padding: EdgeInsets.all(20),
-                        child: Center(
-                          child: RaisedButton(
-                            color: Colors.orange[800],
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text('Go Back', style: TextStyle(color: Colors.white),),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 40,),
-                    ],
+                    topRight: Radius.circular(60),
                   ),
                 ),
+              ),
+            ),
+            Container(
+              height: 500,
+              color: Colors.white,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Center(
+                    child: Entree(),
+                  ),
+                  Center(
+                    child: Pizza(),
+                  ),
+                  Center(
+                    child: Dessert(),
+                  ),
+                ],
               ),
             ),
             Container(
@@ -78,3 +87,89 @@ class FirstPage extends StatelessWidget {
   }
 }
 
+class Entree extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      height: 60,
+      color: Colors.white,
+      child: Center(
+        child: RaisedButton(
+          color: Colors.orange[800],
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          onPressed: () {},
+          child: Container(
+            width: 250,
+            height: 40,
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              'Voorgerechten',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class Pizza extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      height: 100,
+      color: Colors.white,
+      child: Center(
+        child: RaisedButton(
+          color: Colors.orange[800],
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          onPressed: () {},
+          child: Container(
+            width: 250,
+            height: 40,
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              'Pizza',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class Dessert extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      height: 60,
+      color: Colors.white,
+      child: Center(
+        child: RaisedButton(
+          color: Colors.orange[800],
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          onPressed: () {},
+          child: Container(
+            width: 250,
+            height: 40,
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              'Nagerecht',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
