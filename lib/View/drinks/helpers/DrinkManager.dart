@@ -17,7 +17,7 @@ enum DrinksList {
 /// ....
 /// class [DrinkManager] - A tool to help store and process the
 /// drink ordered from the 'Drinks View'.
-
+///
 /// [add] Method - Adds New drinks to the [_orderList].
 /// [remove] Method - Removes a drink from the [_orderList].
 /// [sendDrinkOrder] Method - Converts the [_orderList] into JSON.

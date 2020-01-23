@@ -1,10 +1,15 @@
+
 import 'package:flutter/material.dart';
 import 'package:yourownpizza/View/drinks/helpers/DrinkManager.dart';
+import 'package:yourownpizza/View/drinks/widgets/DrinkTile.dart';
 import '../helpers/constants.dart';
 
 class Drinks extends StatelessWidget {
 
-  DrinkManager manager = new DrinkManager();
+  Drinks() {
+    DrinkManager manager = new DrinkManager();
+    manager.add(DrinksList.Wine, 3);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +40,14 @@ class Drinks extends StatelessWidget {
                 ),
               ),
             ),
+            new ListView.builder(
+                itemBuilder: (BuildContext ctx, int index) {
+                  return new DrinksInTiles(DrinkTileStructure[index]);
+                },
+              itemCount: DrinkTileStructure.length,
+            )
           ],
         ),
-
       ),
     );
   }
