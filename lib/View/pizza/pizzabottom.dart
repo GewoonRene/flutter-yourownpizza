@@ -56,9 +56,6 @@ class _PizzaBottomState extends State<PizzaBottom> {
                     ),
                     Column(
                       children: <Widget>[
-                        SizedBox(
-                          height: 100.0,
-                        ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: <Widget>[
