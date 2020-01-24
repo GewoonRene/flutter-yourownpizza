@@ -7,7 +7,7 @@ class BottomBar extends StatelessWidget {
     return BottomAppBar(
       child: Container(
         height: 150,
-        width: 1000,
+        width: 2000,
         decoration: BoxDecoration(
           color: Colors.black,
           borderRadius: BorderRadius.only(

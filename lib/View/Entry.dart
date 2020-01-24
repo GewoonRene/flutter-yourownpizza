@@ -59,9 +59,8 @@ class FirstPage extends StatelessWidget {
               ),
             ),
             Container(
-//              height: 50,
               padding: EdgeInsets.only(
-                bottom: 90,
+                bottom: 150,
               ),
               color: Colors.white,
               child: Column(
