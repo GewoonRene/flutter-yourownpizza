@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yourownpizza/View/Shared/Bottombar.dart';
 import 'package:yourownpizza/View/helpers/constants.dart';
 
 
@@ -25,7 +26,7 @@ class _PizzaBottomState extends State<PizzaBottom> {
         ),
         child: Column(
           children: <Widget>[
-          SizedBox(height: 300,),
+          SizedBox(height: 200,),
           Expanded(
             child: Container(
               width: 5000,
@@ -95,6 +96,9 @@ class _PizzaBottomState extends State<PizzaBottom> {
               ),
             ),
           ),
+            Container(
+              child: BottomBar(),
+            )
           ],
         ),
       ),
