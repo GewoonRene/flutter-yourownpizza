@@ -59,11 +59,15 @@ class FirstPage extends StatelessWidget {
               ),
             ),
             Container(
-              height: 500,
+//              height: 50,
+              padding: EdgeInsets.only(
+                bottom: 90,
+              ),
               color: Colors.white,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Center(
                     child: Entree(),
@@ -102,12 +106,15 @@ class Entree extends StatelessWidget {
           onPressed: () {},
           child: Container(
             width: 250,
-            height: 40,
-            padding: EdgeInsets.all(10.0),
+            height: 50,
+            padding: EdgeInsets.all(15.0),
             child: Text(
               'Voorgerechten',
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16
+              ),
             ),
           ),
         ),
@@ -131,12 +138,15 @@ class Pizza extends StatelessWidget {
           onPressed: () {},
           child: Container(
             width: 250,
-            height: 40,
-            padding: EdgeInsets.all(10.0),
+            height: 50,
+            padding: EdgeInsets.all(15.0),
             child: Text(
               'Pizza',
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(
+                  color: Colors.white,
+                   fontSize: 16
+              ),
             ),
           ),
         ),
@@ -160,12 +170,15 @@ class Dessert extends StatelessWidget {
           onPressed: () {},
           child: Container(
             width: 250,
-            height: 40,
-            padding: EdgeInsets.all(10.0),
+            height: 50,
+            padding: EdgeInsets.all(15.0),
             child: Text(
               'Nagerecht',
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16
+              ),
             ),
           ),
         ),
