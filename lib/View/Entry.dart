@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../main.dart';
+import 'package:yourownpizza/View/pizza/pizzabottom.dart';
 
 class FirstPage extends StatelessWidget {
   @override
@@ -9,14 +9,53 @@ class FirstPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('First Page'),
       ),
-      body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('Go Back'),
-        ),
+      body: Row(
+        children: <Widget>[
+          Center(
+            child: RaisedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Go Back'),
+            ),
+          ),
+          Center (
+            child: RaisedButton(
+              child: Text(
+                'Pizza Bottoms',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PizzaBottom())
+                );
+              }
+            ),
+          ),
+        ],
       ),
     );
   }
 }
+
+//
+//child: RaisedButton(
+//child: Text(
+//'Pizza Bottom',
+//style: TextStyle(
+//color: Colors.white),
+//),
+//color: Colors.deepOrange,
+//onPressed: () {
+//Navigator.push(
+//context,
+//MaterialPageRoute(builder: (context) =>
+//PizzaBottom()
+//),
+//);
+//}
+//),
+//),
