@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yourownpizza/View/Shared/Bottombar.dart';
+import 'package:yourownpizza/View/drinks/drinks.dart';
 import 'package:yourownpizza/View/helpers/constants.dart';
 
 
@@ -45,7 +46,9 @@ class _PizzaBottomState extends State<PizzaBottom> {
                           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
                           child: RaisedButton(
                             color: mainColor,
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => Drinks()));
+                            },
                             textColor: Colors.white,
                             child: Text(
                                 'Dranken',

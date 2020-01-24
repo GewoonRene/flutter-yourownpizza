@@ -17,7 +17,7 @@ class DrinkTileRow {
 }
 
 // Drink tile structure
-List<DrinkTileRow> DrinkTileStructure = <DrinkTileRow>[
+List<DrinkTileRow> drinkTileStructure = <DrinkTileRow>[
   new DrinkTileRow(
     'Fris dranken',
     <DrinkTileRow>[
@@ -72,7 +72,7 @@ class DrinksInTiles extends StatelessWidget {
       title: new Text(row.title),
 
       // @ToDo Fix if multiple rows is needed.
-       children: row.children.map(_buildTiles).toList()
+      children: row.children.map(_buildTiles).toList()
 
     );
 
@@ -80,36 +80,3 @@ class DrinksInTiles extends StatelessWidget {
 
 }
 
-class DrinkGridTiles extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 1000,
-      child: GridView.count(
-        primary: false,
-        crossAxisCount: 3,
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
-        children: <Widget>[
-          // ToDo: Make seperate widget.
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('He\'d have you all unravel at the'),
-            color: Colors.teal[100],
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Heed not the rabble'),
-            color: Colors.teal[200],
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Sound of screams but the'),
-            color: Colors.teal[300],
-          ),
-        ],
-      ),
-    );
-  }
-
-}
