@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:yourownpizza/View/drinks/helpers/DrinkManager.dart';
 import 'package:yourownpizza/View/drinks/widgets/DrinkTile.dart';
-import '../helpers/constants.dart';
 
 class Drinks extends StatelessWidget {
 
@@ -37,7 +36,7 @@ class Drinks extends StatelessWidget {
                 padding: new EdgeInsets.all(50.0),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(roundedCorners), topRight: Radius.circular(roundedCorners),),
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(60), topRight: Radius.circular(60)),
                 ),
                 child: new ListView.builder(
                   itemBuilder: (BuildContext ctx, int index) {

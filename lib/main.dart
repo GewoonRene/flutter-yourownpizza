@@ -1,19 +1,17 @@
 import 'package:yourownpizza/View/Entry.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:yourownpizza/View/drinks/drinks.dart';
 
 void main() => runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Drinks(),
+      home: MyApp(),
     )
 );
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -87,7 +85,6 @@ class MyApp extends StatelessWidget {
 class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return GestureDetector(
       child: Container(
         height: 50,
@@ -115,7 +112,6 @@ class MyButton extends StatelessWidget {
 class TextInputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Column(
       children: <Widget>[
         Container(
@@ -143,5 +139,4 @@ class TextInputField extends StatelessWidget {
     );
   }
 }
-
 
