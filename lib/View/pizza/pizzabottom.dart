@@ -56,14 +56,28 @@ class _PizzaBottomState extends State<PizzaBottom> {
                     ),
                     Column(
                       children: <Widget>[
+                        SizedBox(
+                          height: 100.0,
+                        ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: <Widget>[
-                            Text(
-                              'Pizza bottoms'
+                            Padding(
+                              padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
+                              child: Text(
+                                'Pizza bottoms',
+                                style: TextStyle(
+                                  fontSize: 30.0,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
                             ),
-
+                            Divider(
+                            ),
                           ],
+                        ),
+                        SizedBox(
+                          height: 30.0,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
