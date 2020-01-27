@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:yourownpizza/View/Shared/Bottombar.dart';
 import 'package:yourownpizza/View/helpers/constants.dart';
-import 'package:yourownpizza/View/pizza/pizzacrust.dart';
 
-class PizzaBottom extends StatefulWidget {
-  @override
-  _PizzaBottomState createState() => _PizzaBottomState();
-}
-
-class _PizzaBottomState extends State<PizzaBottom> {
+class PizzaCrust extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,18 +20,13 @@ class _PizzaBottomState extends State<PizzaBottom> {
         ),
         child: Column(
           children: <Widget>[
-            SizedBox(
-              height: 200,
-            ),
+            SizedBox(height: 200,),
             Expanded(
               child: Container(
                 width: 5000,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(40.0),
-                    topRight: Radius.circular(40.0),
-                  ),
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(40.0), topRight: Radius.circular(40.0),),
                 ),
                 child: Padding(
                   padding: EdgeInsets.all(20),
@@ -47,8 +36,7 @@ class _PizzaBottomState extends State<PizzaBottom> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: <Widget>[
                           Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 10.0, vertical: 15.0),
+                            padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
                             child: drankenButton,
                           ),
                         ],
@@ -59,30 +47,46 @@ class _PizzaBottomState extends State<PizzaBottom> {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: <Widget>[
                               Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 10.0),
+                                padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
                                 child: Text(
-                                  'Pizza bottoms',
+                                  'Pizza crust',
                                   style: TextStyle(
                                     fontSize: 30.0,
                                   ),
                                   textAlign: TextAlign.center,
                                 ),
                               ),
-                              Divider(),
+                              Divider(
+                              ),
                             ],
                           ),
                           SizedBox(
                             height: 30.0,
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          Column(
                             children: <Widget>[
-                              PizzaBottomCard(
-                                type: 'Normaal',
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: <Widget>[
+                                  PizzaCrustCard(
+                                    type: 'Normaal',
+                                  ),
+                                  PizzaCrustCard(
+                                    type: 'Kaas',
+                                  ),
+                                ],
                               ),
-                              PizzaBottomCard(
-                                type: 'Glutenvrij',
+                              SizedBox(height: 50.0,),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: <Widget>[
+                                  PizzaCrustCard(
+                                    type: 'Knakworst',
+                                  ),
+                                  PizzaCrustCard(
+                                    type: 'Kiwi',
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -103,9 +107,11 @@ class _PizzaBottomState extends State<PizzaBottom> {
   }
 }
 
-class PizzaBottomCard extends StatelessWidget {
+
+class PizzaCrustCard extends StatelessWidget {
+
   final String type;
-  PizzaBottomCard({this.type});
+  PizzaCrustCard({this.type});
 
   @override
   Widget build(BuildContext context) {
@@ -113,55 +119,36 @@ class PizzaBottomCard extends StatelessWidget {
       child: Column(
         children: <Widget>[
           SizedBox(
-            height: 42.0,
-          ),
-          CircleAvatar(
-            backgroundColor: Colors.grey,
-            radius: 75.0,
-          ),
-          SizedBox(
-            height: 50.0,
+            height: 30.0,
           ),
           Text('$type'),
           SizedBox(
-            height: 32.0,
+            height: 20.0,
           ),
           Container(
             decoration: bottomSheet,
-            height: 87.0,
+            height: 81.0,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SizedBox(
-                  height: 15.0,
-                ),
-                Text(
-                  'Formaat',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     RaisedButton(
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => PizzaCrust()));
                       },
                       child: Text(
-                        'Standaard',
+                        'Dik',
                         style: TextStyle(color: Colors.white),
                       ),
                       color: mainColor,
                       shape: buttonStyle,
                     ),
-                    SizedBox(
-                      width: 30.0,
-                    ),
                     RaisedButton(
                       onPressed: () {},
                       child: Text(
-                        'Kind',
+                        'Dun',
                         style: TextStyle(color: Colors.white),
                       ),
                       color: mainColor,
@@ -175,8 +162,8 @@ class PizzaBottomCard extends StatelessWidget {
         ],
       ),
       decoration: pizzaBottomStyle,
-      width: 270.0,
-      height: 380.0,
+      width: 250.0,
+      height: 150.0,
     );
   }
 }
