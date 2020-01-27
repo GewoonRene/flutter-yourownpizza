@@ -16,6 +16,16 @@ var buttonStyle = RoundedRectangleBorder(
   borderRadius: BorderRadius.circular(20),
 );
 
+var drankenButton = RaisedButton(
+  onPressed: () {},
+  child: Text(
+    'Dranken',
+    style: TextStyle(color: Colors.white),
+  ),
+  color: mainColor,
+  shape: buttonStyle,
+);
+
 //////////////////////
 //PIZZA BOTTOM STYLE//
 //////////////////////
