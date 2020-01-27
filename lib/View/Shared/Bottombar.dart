@@ -117,7 +117,7 @@ class OrderNowButton extends StatelessWidget {
             ),
             padding: EdgeInsets.all(10.0),
             child: Text(
-              'Order Now',
+              'Meer zien',
               textAlign: TextAlign.center,
             ),
           ),
@@ -126,33 +126,74 @@ class OrderNowButton extends StatelessWidget {
     );
   }
 }
-void _settingModalBottomSheet(context){
+
+void _settingModalBottomSheet(context) {
   showModalBottomSheet(
+    backgroundColor: Colors.transparent,
       context: context,
-      builder: (BuildContext bc){
+      builder: (BuildContext bc) {
         return Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30),
+              topRight: Radius.circular(30),
+            ),
+            color: Colors.black
+          ),
           height: 250,
+          padding: EdgeInsets.only(
+            top: 30,
+            left: 50,
+          ),
           child: new Wrap(
             children: <Widget>[
               new ListTile(
-                  leading: new Icon(Icons.local_pizza),
-                  title: new Text("Totaal pizza's: "),
-                  onTap: () => {}
-              ),
-              new ListTile(
-                leading: new Icon(Icons.euro_symbol),
-                title: new Text('Te betalen: '),
+                leading: new Icon(Icons.local_pizza, color: Colors.white,),
+                title: new Text("Totaal pizza's: ",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                  ),
+                ),
                 onTap: () => {},
               ),
-              RaisedButton(
-                onPressed: () {},
-                child: Container(
-
+              new ListTile(
+                leading: new Icon(Icons.euro_symbol, color: Colors.white,),
+                title: new Text('Te betalen: ',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                  ),
+                ),
+                onTap: () => {},
+              ),
+              Container(
+                padding: EdgeInsets.only(
+                  top: 20,
+                  left: 250,
+                ),
+                child: RaisedButton(
+                  color: Colors.orange[800],
+                  onPressed: () {},
+                  child: Container(
+                    width: 150,
+                    padding: EdgeInsets.only(
+                      top: 20,
+                      bottom: 20,
+                    ),
+                    child: Text(
+                      'Nu bestellen',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
                 ),
               )
             ],
           ),
         );
-      }
-  );
+      });
 }
