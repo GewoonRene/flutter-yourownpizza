@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yourownpizza/View/pizza/pizzabottom.dart';
+import 'package:yourownpizza/View/sideDishes/starters.dart';
 import '../View/Shared/Bottombar.dart';
 
 class FirstPage extends StatelessWidget {
@@ -103,7 +104,9 @@ class Entree extends StatelessWidget {
           color: Colors.orange[800],
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Starters()));
+          },
           child: Container(
             width: 250,
             height: 50,
