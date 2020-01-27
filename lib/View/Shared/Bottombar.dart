@@ -56,34 +56,6 @@ class BottomBar extends StatelessWidget {
   }
 }
 
-class OrderNowButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Container(
-      child: Center(
-        child: RaisedButton(
-          color: Colors.black,
-          onPressed: () {},
-          textColor: Colors.white,
-          child: Container(
-            width: 150,
-            decoration: BoxDecoration(
-              color: Colors.orange[800],
-              borderRadius: BorderRadius.circular(80.0),
-            ),
-            padding: EdgeInsets.all(10.0),
-            child: Text(
-              'Order Now',
-              textAlign: TextAlign.center,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 class TotalPizza extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -94,7 +66,7 @@ class TotalPizza extends StatelessWidget {
         child: Align(
 //          alignment: Alignment.centerLeft,
           child: Text(
-            "Total pizza's: ",
+            "Totaal pizza's: ",
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
         ),
@@ -123,4 +95,64 @@ class TotalPrice extends StatelessWidget {
       ),
     );
   }
+}
+
+class OrderNowButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      child: Center(
+        child: RaisedButton(
+          color: Colors.black,
+          onPressed: () {
+            _settingModalBottomSheet(context);
+          },
+          textColor: Colors.white,
+          child: Container(
+            width: 150,
+            decoration: BoxDecoration(
+              color: Colors.orange[800],
+              borderRadius: BorderRadius.circular(80.0),
+            ),
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              'Order Now',
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+void _settingModalBottomSheet(context){
+  showModalBottomSheet(
+      context: context,
+      builder: (BuildContext bc){
+        return Container(
+          height: 250,
+          child: new Wrap(
+            children: <Widget>[
+              new ListTile(
+                  leading: new Icon(Icons.local_pizza),
+                  title: new Text("Totaal pizza's: "),
+                  onTap: () => {}
+              ),
+              new ListTile(
+                leading: new Icon(Icons.euro_symbol),
+                title: new Text('Te betalen: '),
+                onTap: () => {},
+              ),
+              RaisedButton(
+                onPressed: () {},
+                child: Container(
+
+                ),
+              )
+            ],
+          ),
+        );
+      }
+  );
 }
