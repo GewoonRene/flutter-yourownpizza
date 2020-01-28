@@ -43,25 +43,25 @@ class PizzaCrust extends StatelessWidget {
                       ),
                       Column(
                         children: <Widget>[
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: <Widget>[
-                              Padding(
-                                padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
-                                child: Text(
-                                  'Pizza crust',
-                                  style: TextStyle(
-                                    fontSize: 30.0,
+                          Container(
+                            margin: EdgeInsets.only(bottom: 20.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: <Widget>[
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
+                                  child: Text(
+                                    'Pizza crust',
+                                    style: TextStyle(
+                                      fontSize: 30.0,
+                                    ),
+                                    textAlign: TextAlign.center,
                                   ),
-                                  textAlign: TextAlign.center,
                                 ),
-                              ),
-                              Divider(
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 30.0,
+                                Divider(
+                                ),
+                              ],
+                            ),
                           ),
                           Column(
                             children: <Widget>[
@@ -118,12 +118,9 @@ class PizzaCrustCard extends StatelessWidget {
     return Container(
       child: Column(
         children: <Widget>[
-          SizedBox(
-            height: 30.0,
-          ),
-          Text('$type'),
-          SizedBox(
-            height: 20.0,
+          Container(
+            margin: EdgeInsets.only(top: 30.0, bottom: 20.0),
+              child: Text('$type')
           ),
           Container(
             decoration: bottomSheet,

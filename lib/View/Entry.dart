@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:yourownpizza/View/helpers/constants.dart';
 import 'package:yourownpizza/View/pizza/pizzabottom.dart';
 import 'package:yourownpizza/View/sideDishes/starters.dart';
-import '../View/Shared/Bottombar.dart';
+import 'package:yourownpizza/View/Shared/Bottombar.dart';
 
 class FirstPage extends StatelessWidget {
   @override
@@ -102,8 +103,7 @@ class Entree extends StatelessWidget {
       child: Center(
         child: RaisedButton(
           color: Colors.orange[800],
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          shape: buttonStyle,
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => Starters()));
           },
@@ -136,8 +136,7 @@ class Pizza extends StatelessWidget {
       child: Center(
         child: RaisedButton(
           color: Colors.orange[800],
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          shape: buttonStyle,
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => PizzaBottom()));
           },
@@ -170,8 +169,7 @@ class Dessert extends StatelessWidget {
       child: Center(
         child: RaisedButton(
           color: Colors.orange[800],
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          shape: buttonStyle,
           onPressed: () {},
           child: Container(
             width: 250,
