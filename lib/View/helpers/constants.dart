@@ -1,7 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:yourownpizza/View/Entry.dart';
-import 'package:yourownpizza/View/drinks/drinks.dart';
 ///////////
 //COLORS///
 ///////////
@@ -19,7 +17,7 @@ var buttonStyle = RoundedRectangleBorder(
 
 var drankenButton = RaisedButton(
   onPressed: () {
-    Drinks();
+
   },
   child: Text(
     'Dranken',
@@ -31,7 +29,7 @@ var drankenButton = RaisedButton(
 
 var backButton = RaisedButton(
   onPressed: () {
-    FirstPage();
+
   },
   child: Text(
     'Back',

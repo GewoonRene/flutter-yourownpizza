@@ -38,7 +38,17 @@ class Drinks extends StatelessWidget {
                       children: <Widget>[
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
-                          child: backButton,
+                          child: RaisedButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text(
+                              'Back',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            color: mainColor,
+                            shape: buttonStyle,
+                          ),
                         ),
                       ],
                     ),
