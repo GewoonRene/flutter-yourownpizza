@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:yourownpizza/View/Entry.dart';
 import 'package:yourownpizza/View/drinks/drinks.dart';
 ///////////
 //COLORS///
@@ -6,8 +8,6 @@ import 'package:yourownpizza/View/drinks/drinks.dart';
 
 var mainColor = Colors.deepOrange;
 var mainBlack = Colors.black87;
-
-
 
 ///////////
 //BUTTONS//
@@ -23,6 +23,18 @@ var drankenButton = RaisedButton(
   },
   child: Text(
     'Dranken',
+    style: TextStyle(color: Colors.white),
+  ),
+  color: mainColor,
+  shape: buttonStyle,
+);
+
+var backButton = RaisedButton(
+  onPressed: () {
+    FirstPage();
+  },
+  child: Text(
+    'Back',
     style: TextStyle(color: Colors.white),
   ),
   color: mainColor,
