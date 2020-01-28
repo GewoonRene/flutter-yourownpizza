@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yourownpizza/View/Shared/Bottombar.dart';
+import 'package:yourownpizza/View/drinks/helpers/DrinksData.dart';
 import 'package:yourownpizza/View/drinks/widgets/DrinkTile.dart';
 
 class Drinks extends StatelessWidget {
@@ -30,7 +31,7 @@ class Drinks extends StatelessWidget {
               Expanded(
                 child: Container(
                   padding: EdgeInsets.only(left: 100, right: 100),
-                  child: GenerateListMap(),
+                  child: GenerateListMap(drinkTileStructure[1]),
                 ),
               ),
               Container(
