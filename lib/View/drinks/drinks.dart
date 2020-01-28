@@ -31,7 +31,7 @@ class Drinks extends StatelessWidget {
               Expanded(
                 child: Container(
                   padding: EdgeInsets.only(left: 100, right: 100),
-                  child: GenerateListMap(drinkTileStructure[1]),
+                  child: GenerateListMap(drinkTileStructure),
                 ),
               ),
               Container(

@@ -24,16 +24,28 @@ import 'package:yourownpizza/View/drinks/helpers/DrinksData.dart';
 //    ],
 //  )
 /// ....
+
 class GenerateListMap extends StatelessWidget {
 
-  final DrinkTileRow drinkTileRow;
+  /// The data structure with data.
+  final List<DrinkTileRow> drinkTileRow;
   GenerateListMap(this.drinkTileRow);
 
   @override
   Widget build(BuildContext context) {
-    return _generateListMap(drinkTileRow);
+    List<Widget> listMap= [];
+
+    // @ToDo: Fix workaround.
+    for (int i = 0; i < drinkTileRow.length; i++) {
+      listMap.add( _generateListMap(drinkTileRow[i]) );
+    }
+
+    return Column(
+      children: listMap,
+    );
   }
 
+  /// [DrinkTileRow] dtr - The children of the main row.
   Widget _generateListMap(DrinkTileRow row) {
 
     // Using 'new Text' instead of 'new ListTile' will break the margin of the list.
@@ -46,12 +58,13 @@ class GenerateListMap extends StatelessWidget {
       // key: new PageStorageKey<DrinkTileRow>(row),
 
       children: <Widget>[
-        _createGrid(drinkTileRow)
+        _createGrid(row)
       ],
 
     );
   }
 
+  /// [DrinkTileRow] dtr - The children of the main row.
   Widget _createGrid(DrinkTileRow dtr) {
     return Container(
       child: GridView.count(
@@ -67,13 +80,16 @@ class GenerateListMap extends StatelessWidget {
     );
   }
 
+  /// [String] title - The title of the data.
   Widget _createTiles(String title) {
     return Container(
+      margin: EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: Colors.red,
         border: Border.all()
       ),
-      child: Text(title),
+      child: Center(
+        child: Text(title),
+      ),
     );
   }
 
