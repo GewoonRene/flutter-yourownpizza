@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yourownpizza/View/drinks/drinks.dart';
 ///////////
 //COLORS///
 ///////////
@@ -14,6 +15,18 @@ var mainBlack = Colors.black87;
 
 var buttonStyle = RoundedRectangleBorder(
   borderRadius: BorderRadius.circular(20),
+);
+
+var drankenButton = RaisedButton(
+  onPressed: () {
+    Drinks();
+  },
+  child: Text(
+    'Dranken',
+    style: TextStyle(color: Colors.white),
+  ),
+  color: mainColor,
+  shape: buttonStyle,
 );
 
 //////////////////////
