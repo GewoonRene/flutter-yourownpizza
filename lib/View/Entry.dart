@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yourownpizza/View/pizza/pizzabottom.dart';
 import '../View/Shared/Bottombar.dart';
+import 'helpers/constants.dart';
 
 class FirstPage extends StatelessWidget {
   @override
@@ -38,14 +39,14 @@ class FirstPage extends StatelessWidget {
                     height: 10,
                   ),
                   Text(
-                    "Yout own pizza",
+                    "Your own pizza",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ],
               ),
             ),
             SizedBox(
-              height: 200,
+              height: 100,
             ),
             Expanded(
               child: Container(
@@ -56,6 +57,16 @@ class FirstPage extends StatelessWidget {
                     topLeft: Radius.circular(60),
                     topRight: Radius.circular(60),
                   ),
+                ),
+                child:   Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 40.0, vertical: 15.0),
+                      child: drankenButton,
+                    ),
+                  ],
                 ),
               ),
             ),

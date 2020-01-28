@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
                 children: <Widget>[
                   Text("LOGO?", style: TextStyle(color: Colors.white, fontSize: 40),),
                   SizedBox(height: 10,),
-                  Text("Yout own pizza", style: TextStyle(color: Colors.white, fontSize: 20),),
+                  Text("Your own pizza", style: TextStyle(color: Colors.white, fontSize: 20),),
                 ],
               ),
             ),
