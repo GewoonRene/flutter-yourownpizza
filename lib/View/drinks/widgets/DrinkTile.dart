@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:yourownpizza/View/drinks/helpers/DrinksData.dart';
+import 'package:yourownpizza/View/helpers/constants.dart';
 
 /// ....
 ///  @USAGE:
@@ -68,8 +69,8 @@ class GenerateListMap extends StatelessWidget {
   Widget _createGrid(DrinkTileRow dtr) {
     return Container(
       child: GridView.count(
-        crossAxisSpacing: 20,
-        mainAxisSpacing: 20,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
         crossAxisCount: 3,
         shrinkWrap: true,
         physics: ClampingScrollPhysics(),
@@ -83,13 +84,35 @@ class GenerateListMap extends StatelessWidget {
   /// [String] title - The title of the data.
   Widget _createTiles(String title) {
     return Container(
-      margin: EdgeInsets.all(20),
+      margin: EdgeInsets.all(5),
       decoration: BoxDecoration(
         border: Border.all()
       ),
-      child: Center(
-        child: Text(title),
-      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.all(10),
+            child: Icon(Icons.local_drink, size: 80),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              IconButton(
+                icon: Icon(Icons.cancel),
+                color: mainColor,
+                onPressed: null
+              ),
+              Text(title, style: TextStyle(fontSize: 14)),
+              IconButton(
+                icon: Icon(Icons.add_circle),
+                color: mainColor,
+                onPressed: null
+              ),
+            ],
+          ),
+        ],
+      )
     );
   }
 

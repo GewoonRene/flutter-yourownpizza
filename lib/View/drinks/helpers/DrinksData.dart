@@ -25,23 +25,23 @@ List<DrinkTileRow> drinkTileStructure = <DrinkTileRow>[
     <DrinkTileRow>[
       new DrinkTileRow('Irish Koffie'),
       new DrinkTileRow('Espresso'),
-      new DrinkTileRow('Koffie Verkeerd')
+      new DrinkTileRow('Thee')
     ],
   ),
   new DrinkTileRow(
     'Wijnen',
     <DrinkTileRow>[
       new DrinkTileRow('Witte Wijn'),
-      new DrinkTileRow('Droge Witte Wijn'),
-      new DrinkTileRow('Nog Drogere Wittere Wijn')
+      new DrinkTileRow('Rode Wijn'),
+      new DrinkTileRow('Hugo')
     ],
   ),
   new DrinkTileRow(
     'Bieren & Dranken',
     <DrinkTileRow>[
-      new DrinkTileRow('Bier'),
-      new DrinkTileRow('0.0'),
-      new DrinkTileRow('Rum')
+      new DrinkTileRow('Amstel'),
+      new DrinkTileRow('Amstel 0.0'),
+      new DrinkTileRow('Jupiler')
     ],
   ),
 ];
