@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:yourownpizza/View/Shared/Bottombar.dart';
+import 'package:yourownpizza/View/helpers/constants.dart';
 
 class Starters extends StatelessWidget {
   @override
@@ -36,7 +37,7 @@ class Starters extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
                           Padding(
-                            padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
+                            padding: EdgeInsets.symmetric(vertical: 17.0, horizontal: 10.0),
                             child: Text(
                               'Voorgerechten',
                               style: TextStyle(
@@ -47,23 +48,38 @@ class Starters extends StatelessWidget {
                           ),
                           Divider(
                           ),
-                          SizedBox(
-                            height: 450,
-                            child: GridView (
-                              shrinkWrap: true,
-                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2,
-                            ),
-                            children: <Widget>[
-                                StartersList(
-                                  type: 'Carpaccio',
-                                ),
-                                StartersList(),
-                                StartersList(),
-                                StartersList(),
-                                StartersList(),
-                                StartersList(),
-                              ],
+                          Center(
+                            child: Container(
+                              width: 500,
+                              alignment: Alignment.center,
+                              child: GridView.count(
+                                shrinkWrap: true,
+                                primary: true,
+                                crossAxisCount: 2,
+                                crossAxisSpacing: 10,
+                                mainAxisSpacing: 10,
+                                childAspectRatio: 1.4,
+                                children: <Widget>[
+                                  StartersList(
+                                    type: 'Carpaccio',
+                                  ),
+                                  StartersList(
+                                    type: 'Caprese',
+                                  ),
+                                  StartersList(
+                                    type: 'Garnale cocktail',
+                                  ),
+                                  StartersList(
+                                    type: 'Ceaser',
+                                  ),
+                                  StartersList(
+                                    type: 'Uiensoep',
+                                  ),
+                                  StartersList(
+                                    type: 'Chapion toast',
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ],
@@ -89,9 +105,58 @@ class StartersList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridTile(
-      child: Text(
-        '$type'
+    return Container(
+      child: GridTile(
+        child: Center(
+          child: Container(
+            margin: EdgeInsets.only(top: 30.0),
+            decoration: pizzaBottomStyle,
+            width: 250,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.only(bottom: 20.0),
+                  child: Text(
+                    '$type',
+                  ),
+                ),
+                Container(
+                  decoration: bottomSheet,
+                  height: 81.0,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      RaisedButton(
+                        onPressed: () {},
+                        child: Text(
+                          '-',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        color: mainColor,
+                        shape: buttonStyle,
+                      ),
+                      Text (
+                        '0',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      RaisedButton(
+                        onPressed: () {},
+                        child: Text(
+                          '+',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        color: mainColor,
+                        shape: buttonStyle,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
