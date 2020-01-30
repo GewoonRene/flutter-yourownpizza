@@ -26,6 +26,7 @@ import 'package:yourownpizza/View/helpers/constants.dart';
 //  )
 /// ....
 
+// ignore: must_be_immutable
 class GenerateListMap extends StatelessWidget {
 
   /// The data structure with data.

@@ -2,7 +2,6 @@ import 'package:yourownpizza/View/Entry.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:yourownpizza/View/helpers/constants.dart';
-import 'package:yourownpizza/View/ingredients/ingredients.dart';
 
 void main() => runApp(
     MaterialApp(
