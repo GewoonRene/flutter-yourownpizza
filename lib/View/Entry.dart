@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yourownpizza/View/helpers/Buttons.dart';
 import 'package:yourownpizza/View/pizza/pizzabottom.dart';
 import '../View/Shared/Bottombar.dart';
 import 'helpers/constants.dart';
@@ -64,7 +65,7 @@ class FirstPage extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(
                           horizontal: 40.0, vertical: 15.0),
-                      child: drankenButton,
+                      child: Buttons(),
                     ),
                   ],
                 ),
@@ -92,9 +93,7 @@ class FirstPage extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              child: BottomBar(),
-            ),
+            BottomBar(),
           ],
         ),
       ),

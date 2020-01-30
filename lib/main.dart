@@ -1,7 +1,8 @@
 import 'package:yourownpizza/View/Entry.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+//import 'package:firebase/firebase.dart';
+//import 'package:cloud_firestore/cloud_firestore.dart';
 void main() => runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -83,7 +84,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyButton extends StatelessWidget {
+class MyButton extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -111,7 +112,8 @@ class MyButton extends StatelessWidget {
   }
 }
 
-class TextInputField extends StatelessWidget {
+class TextInputField extends StatelessWidget{
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -123,7 +125,7 @@ class TextInputField extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border(bottom: BorderSide(color: Colors.grey[200])),
           ),
-          child: TextField(
+          child: TextFormField(
             keyboardType: TextInputType.number,
             inputFormatters: <TextInputFormatter>[
               LengthLimitingTextInputFormatter(3),
@@ -136,11 +138,14 @@ class TextInputField extends StatelessWidget {
                 hintStyle: TextStyle(color: Colors.grey,),
                 border: InputBorder.none
             ),
+            validator: (input) => input.length < 3 ? 'Mag niet langer zijn dan 3' : null,
           ),
         ),
       ],
     );
   }
 }
+
+
 
 
