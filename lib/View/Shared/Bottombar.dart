@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yourownpizza/View/helpers/constants.dart';
 
 class BottomBar extends StatelessWidget {
   @override
@@ -113,7 +114,7 @@ class OrderNowButton extends StatelessWidget {
             width: 150,
             decoration: BoxDecoration(
               color: Colors.orange[800],
-              borderRadius: BorderRadius.circular(80.0),
+              borderRadius: BorderRadius.circular(26.0),
             ),
             padding: EdgeInsets.all(10.0),
             child: Text(
@@ -175,6 +176,7 @@ void _settingModalBottomSheet(context) {
                 child: RaisedButton(
                   color: Colors.orange[800],
                   onPressed: () {},
+                  shape: buttonStyle,
                   child: Container(
                     width: 150,
                     padding: EdgeInsets.only(

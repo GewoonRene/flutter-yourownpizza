@@ -1,29 +1,18 @@
+
 import 'package:flutter/material.dart';
 ///////////
 //COLORS///
 ///////////
 
-var mainColor = Colors.deepOrange;
+var mainColor = Colors.orange[800];
 var mainBlack = Colors.black87;
-
-
 
 ///////////
 //BUTTONS//
 ///////////
 
 var buttonStyle = RoundedRectangleBorder(
-  borderRadius: BorderRadius.circular(20),
-);
-
-var drankenButton = RaisedButton(
-  onPressed: () {},
-  child: Text(
-    'Dranken',
-    style: TextStyle(color: Colors.white),
-  ),
-  color: mainColor,
-  shape: buttonStyle,
+  borderRadius: BorderRadius.circular(26),
 );
 
 //////////////////////

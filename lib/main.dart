@@ -1,6 +1,7 @@
 import 'package:yourownpizza/View/Entry.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:yourownpizza/View/helpers/constants.dart';
 
 void main() => runApp(
     MaterialApp(
@@ -12,7 +13,6 @@ void main() => runApp(
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
                 children: <Widget>[
                   Text("LOGO?", style: TextStyle(color: Colors.white, fontSize: 40),),
                   SizedBox(height: 10,),
-                  Text("Yout own pizza", style: TextStyle(color: Colors.white, fontSize: 20),),
+                  Text("Your own pizza", style: TextStyle(color: Colors.white, fontSize: 20),),
                 ],
               ),
             ),
@@ -86,14 +86,12 @@ class MyApp extends StatelessWidget {
 class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return GestureDetector(
       child: Container(
         height: 50,
         width: 100,
         child: Center(
-          child:
-          RaisedButton(
+          child: RaisedButton(
             child: Text('Go', style: TextStyle(color: Colors.white),),
             color: Colors.orange[800],
             onPressed: () {
@@ -104,6 +102,7 @@ class MyButton extends StatelessWidget {
                 ),
               );
             },
+            shape: buttonStyle,
           ),
         ),
       ),
@@ -111,10 +110,10 @@ class MyButton extends StatelessWidget {
   }
 }
 
-class TextInputField extends StatelessWidget {
+class TextInputField extends StatelessWidget{
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Column(
       children: <Widget>[
         Container(
@@ -123,7 +122,7 @@ class TextInputField extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border(bottom: BorderSide(color: Colors.grey[200])),
           ),
-          child: TextField(
+          child: TextFormField(
             keyboardType: TextInputType.number,
             inputFormatters: <TextInputFormatter>[
               LengthLimitingTextInputFormatter(3),
@@ -136,11 +135,10 @@ class TextInputField extends StatelessWidget {
                 hintStyle: TextStyle(color: Colors.grey,),
                 border: InputBorder.none
             ),
+            validator: (input) => input.length < 3 ? 'Mag niet langer zijn dan 3' : null,
           ),
         ),
       ],
     );
   }
 }
-
-
