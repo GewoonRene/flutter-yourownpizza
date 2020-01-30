@@ -3,6 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:yourownpizza/View/helpers/constants.dart';
 
+/// ....
+///   USAGE:
+///     - create new instance.
+///     - button TO a route = new Buttons("title_here", WidgetHere());
+///     - button BACK a route = new Buttons("title_here");
+/// ....
 // ignore: must_be_immutable
 class Buttons extends StatelessWidget {
 
@@ -17,6 +23,7 @@ class Buttons extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton(
       onPressed: () {
+          /// Checks route type
           this.route != null ? Navigator.push(context, MaterialPageRoute(builder: (context) => this.route))
           : Navigator.pop(context);
         },
