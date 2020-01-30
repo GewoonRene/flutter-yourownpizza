@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
                 children: <Widget>[
                   Text("LOGO?", style: TextStyle(color: Colors.white, fontSize: 40),),
                   SizedBox(height: 10,),
-                  Text("Yout own pizza", style: TextStyle(color: Colors.white, fontSize: 20),),
+                  Text("Your own pizza", style: TextStyle(color: Colors.white, fontSize: 20),),
                 ],
               ),
             ),
@@ -109,7 +109,8 @@ class MyButton extends StatelessWidget {
   }
 }
 
-class TextInputField extends StatelessWidget {
+class TextInputField extends StatelessWidget{
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -120,7 +121,7 @@ class TextInputField extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border(bottom: BorderSide(color: Colors.grey[200])),
           ),
-          child: TextField(
+          child: TextFormField(
             keyboardType: TextInputType.number,
             inputFormatters: <TextInputFormatter>[
               LengthLimitingTextInputFormatter(3),
@@ -133,10 +134,10 @@ class TextInputField extends StatelessWidget {
                 hintStyle: TextStyle(color: Colors.grey,),
                 border: InputBorder.none
             ),
+            validator: (input) => input.length < 3 ? 'Mag niet langer zijn dan 3' : null,
           ),
         ),
       ],
     );
   }
 }
-

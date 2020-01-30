@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yourownpizza/View/Shared/Bottombar.dart';
+import 'package:yourownpizza/View/drinks/drinks.dart';
+import 'package:yourownpizza/View/helpers/Buttons.dart';
 import 'package:yourownpizza/View/helpers/constants.dart';
 
 class PizzaCrust extends StatelessWidget {
@@ -37,7 +39,7 @@ class PizzaCrust extends StatelessWidget {
                         children: <Widget>[
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
-                            child: drankenButton,
+                            child: Buttons("Drinks", Drinks()),
                           ),
                         ],
                       ),
