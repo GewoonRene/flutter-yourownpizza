@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:yourownpizza/View/Shared/Bottombar.dart';
 import 'package:yourownpizza/View/drinks/helpers/DrinksData.dart';
 import 'package:yourownpizza/View/drinks/widgets/DrinkTile.dart';
-import 'package:yourownpizza/View/helpers/constants.dart';
+import 'package:yourownpizza/View/helpers/navigation-button.dart';
 
 class Drinks extends StatelessWidget {
 
@@ -38,17 +38,7 @@ class Drinks extends StatelessWidget {
                       children: <Widget>[
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
-                          child: RaisedButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text(
-                              'Back',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            color: mainColor,
-                            shape: buttonStyle,
-                          ),
+                          child: new NavigationButton("Back")
                         ),
                       ],
                     ),
