@@ -1,6 +1,7 @@
 import 'package:yourownpizza/View/Entry.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:yourownpizza/View/helpers/constants.dart';
 
 void main() => runApp(
     MaterialApp(
@@ -90,8 +91,7 @@ class MyButton extends StatelessWidget {
         height: 50,
         width: 100,
         child: Center(
-          child:
-          RaisedButton(
+          child: RaisedButton(
             child: Text('Go', style: TextStyle(color: Colors.white),),
             color: Colors.orange[800],
             onPressed: () {
@@ -102,6 +102,7 @@ class MyButton extends StatelessWidget {
                 ),
               );
             },
+            shape: buttonStyle,
           ),
         ),
       ),

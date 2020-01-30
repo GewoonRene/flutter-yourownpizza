@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 //COLORS///
 ///////////
 
-var mainColor = Colors.deepOrange;
+var mainColor = Colors.orange[800];
 var mainBlack = Colors.black87;
 
 ///////////
@@ -12,7 +12,7 @@ var mainBlack = Colors.black87;
 ///////////
 
 var buttonStyle = RoundedRectangleBorder(
-  borderRadius: BorderRadius.circular(20),
+  borderRadius: BorderRadius.circular(26),
 );
 
 //////////////////////

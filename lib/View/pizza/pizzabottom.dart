@@ -55,25 +55,27 @@ class _PizzaBottomState extends State<PizzaBottom> {
                       ),
                       Column(
                         children: <Widget>[
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: <Widget>[
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 10.0),
-                                child: Text(
-                                  'Pizza bottoms',
-                                  style: TextStyle(
-                                    fontSize: 30.0,
+                          Container(
+                            margin: EdgeInsets.only(bottom: 30.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: <Widget>[
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      vertical: 20.0, horizontal: 10.0
                                   ),
-                                  textAlign: TextAlign.center,
+                                  child: Text(
+                                    'Pizza bottoms',
+                                    style: TextStyle(
+                                      fontSize: 30.0,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
                                 ),
-                              ),
-                              Divider(),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 30.0,
+                                Divider(
+                                ),
+                              ],
+                            ),
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -112,28 +114,23 @@ class PizzaBottomCard extends StatelessWidget {
     return Container(
       child: Column(
         children: <Widget>[
-          SizedBox(
-            height: 42.0,
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 46.0),
+            child: CircleAvatar(
+              backgroundColor: Colors.grey,
+              radius: 75.0,
+            ),
           ),
-          CircleAvatar(
-            backgroundColor: Colors.grey,
-            radius: 75.0,
-          ),
-          SizedBox(
-            height: 50.0,
-          ),
-          Text('$type'),
-          SizedBox(
-            height: 32.0,
+          Text(
+            '$type',
           ),
           Container(
+            margin: EdgeInsets.only(top: 32.0),
             decoration: bottomSheet,
             height: 87.0,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SizedBox(
-                  height: 15.0,
-                ),
                 Text(
                   'Formaat',
                   style: TextStyle(
@@ -141,8 +138,7 @@ class PizzaBottomCard extends StatelessWidget {
                   ),
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     RaisedButton(
                       onPressed: () {
@@ -154,9 +150,6 @@ class PizzaBottomCard extends StatelessWidget {
                       ),
                       color: mainColor,
                       shape: buttonStyle,
-                    ),
-                    SizedBox(
-                      width: 30.0,
                     ),
                     RaisedButton(
                       onPressed: () {},
