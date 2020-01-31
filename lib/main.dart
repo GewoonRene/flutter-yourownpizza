@@ -1,7 +1,6 @@
 import 'package:yourownpizza/View/Entry.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:yourownpizza/View/helpers/constants.dart';
 
 void main() => runApp(
     MaterialApp(
@@ -13,6 +12,7 @@ void main() => runApp(
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -67,9 +67,8 @@ class MyApp extends StatelessWidget {
                         ),
                         child: TextInputField(),
                       ),
-                      SizedBox(height: 40,),
-                      Container(
-                        child: MyButton(),
+                      SizedBox(
+                        height: 40,
                       ),
                     ],
                   ),
@@ -83,37 +82,11 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Container(
-        height: 50,
-        width: 100,
-        child: Center(
-          child: RaisedButton(
-            child: Text('Go', style: TextStyle(color: Colors.white),),
-            color: Colors.orange[800],
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) =>
-                    FirstPage()
-                ),
-              );
-            },
-            shape: buttonStyle,
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 class TextInputField extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return Column(
       children: <Widget>[
         Container(
@@ -122,7 +95,7 @@ class TextInputField extends StatelessWidget{
           decoration: BoxDecoration(
             border: Border(bottom: BorderSide(color: Colors.grey[200])),
           ),
-          child: TextFormField(
+          child: TextField(
             keyboardType: TextInputType.number,
             inputFormatters: <TextInputFormatter>[
               LengthLimitingTextInputFormatter(3),
@@ -135,10 +108,30 @@ class TextInputField extends StatelessWidget{
                 hintStyle: TextStyle(color: Colors.grey,),
                 border: InputBorder.none
             ),
-            validator: (input) => input.length < 3 ? 'Mag niet langer zijn dan 3' : null,
           ),
         ),
+        Container(
+          height: 50,
+          width: 100,
+          child: Center(
+            child: RaisedButton(
+              child: Text(
+                'Go',
+                style: TextStyle(color: Colors.white),
+              ),
+              color: Colors.orange[800],
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FirstPage()),
+                );
+              },
+            ),
+          ),
+        )
       ],
     );
   }
 }
+
+

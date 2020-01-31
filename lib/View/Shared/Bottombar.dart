@@ -1,63 +1,83 @@
 import 'package:flutter/material.dart';
 import 'package:yourownpizza/View/helpers/constants.dart';
 
+//Firestore
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class BottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return BottomAppBar(
-      child: Container(
-        height: 150,
-        width: 2000,
-        decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(60),
-            topRight: Radius.circular(60),
-          ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            SizedBox(
-              height: 50,
-            ),
-            Align(
-              alignment: Alignment.center,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Container(
-                        child: TotalPizza(),
-                      ),
-                      Spacer(
-                        flex: 1,
-                      ),
-                      Container(
-                        child: OrderNowButton(),
-                      ),
-                      Spacer(
-                        flex: 1,
-                      ),
-                      Container(
-                        child: TotalPrice(),
-                      )
-                    ],
-                  ),
-                ],
+      child: StreamBuilder(
+        stream: Firestore.instance.collection('TableNumber').snapshots(),
+        builder: (context, snapshot) {
+//          if (!snapshot.hasData) return Text('Loading data...');
+          return Container(
+            height: 150,
+            width: 2000,
+            decoration: BoxDecoration(
+              color: Colors.black,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(60),
+                topRight: Radius.circular(60),
               ),
             ),
-          ],
-        ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                SizedBox(
+                  height: 50,
+                ),
+                Align(
+                  alignment: Alignment.center,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Container(
+                            child: TotalPizza(
+                              txt: "Total pizza's: ",
+                              number: snapshot.data.documents[0]['Total'],
+                            ),
+                          ),
+                          Spacer(
+                            flex: 1,
+                          ),
+                          Container(
+                            child: OrderNowButton(
+                              txt: "Total pizza's: ",
+                              number: snapshot.data.documents[0]['Total'],
+                            ),
+                          ),
+                          Spacer(
+                            flex: 1,
+                          ),
+                          Container(
+                            child: TotalPrice(),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
       ),
     );
   }
 }
 
 class TotalPizza extends StatelessWidget {
+  final String txt;
+  final int number;
+
+  TotalPizza({this.number, this.txt});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -67,7 +87,7 @@ class TotalPizza extends StatelessWidget {
         child: Align(
 //          alignment: Alignment.centerLeft,
           child: Text(
-            "Totaal pizza's: ",
+            "$txt $number",
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
         ),
@@ -99,6 +119,10 @@ class TotalPrice extends StatelessWidget {
 }
 
 class OrderNowButton extends StatelessWidget {
+  final String txt;
+  final int number;
+
+  OrderNowButton({this.txt, this.number});
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -107,7 +131,7 @@ class OrderNowButton extends StatelessWidget {
         child: RaisedButton(
           color: Colors.black,
           onPressed: () {
-            _settingModalBottomSheet(context);
+            _settingModalBottomSheet(context, txt, number);
           },
           textColor: Colors.white,
           child: Container(
@@ -128,7 +152,7 @@ class OrderNowButton extends StatelessWidget {
   }
 }
 
-void _settingModalBottomSheet(context) {
+void _settingModalBottomSheet(context, String txt, int number) {
   showModalBottomSheet(
     backgroundColor: Colors.transparent,
       context: context,
@@ -150,18 +174,22 @@ void _settingModalBottomSheet(context) {
             children: <Widget>[
               new ListTile(
                 leading: new Icon(Icons.local_pizza, color: Colors.white,),
-                title: new Text("Totaal pizza's: ",
+                title: new Text("$txt $number",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
+                    ),
                   ),
+                  onTap: () => {},
                 ),
-                onTap: () => {},
-              ),
-              new ListTile(
-                leading: new Icon(Icons.euro_symbol, color: Colors.white,),
-                title: new Text('Te betalen: ',
-                  style: TextStyle(
+                new ListTile(
+                  leading: new Icon(
+                    Icons.euro_symbol,
+                    color: Colors.white,
+                  ),
+                  title: new Text(
+                    'Te betalen: ',
+                    style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
                   ),
@@ -199,3 +227,5 @@ void _settingModalBottomSheet(context) {
         );
       });
 }
+
+
