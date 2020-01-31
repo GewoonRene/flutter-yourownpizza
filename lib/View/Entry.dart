@@ -38,7 +38,7 @@ class FirstPage extends StatelessWidget {
                     height: 10,
                   ),
                   Text(
-                    "Yout own pizza",
+                    "Your own pizza",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ],

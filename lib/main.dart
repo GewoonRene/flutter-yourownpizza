@@ -1,6 +1,7 @@
 import 'package:yourownpizza/View/Entry.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:yourownpizza/View/helpers/constants.dart';
 
 void main() => runApp(
     MaterialApp(
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
                 children: <Widget>[
                   Text("LOGO?", style: TextStyle(color: Colors.white, fontSize: 40),),
                   SizedBox(height: 10,),
-                  Text("Yout own pizza", style: TextStyle(color: Colors.white, fontSize: 20),),
+                  Text("Your own pizza", style: TextStyle(color: Colors.white, fontSize: 20),),
                 ],
               ),
             ),
@@ -67,9 +68,8 @@ class MyApp extends StatelessWidget {
                         ),
                         child: TextInputField(),
                       ),
-                      SizedBox(height: 40,),
-                      Container(
-                        child: MyButton(),
+                      SizedBox(
+                        height: 40,
                       ),
                     ],
                   ),
@@ -83,38 +83,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return GestureDetector(
-      child: Container(
-        height: 50,
-        width: 100,
-        child: Center(
-          child:
-          RaisedButton(
-            child: Text('Go', style: TextStyle(color: Colors.white),),
-            color: Colors.orange[800],
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) =>
-                    FirstPage()
-                ),
-              );
-            },
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 class TextInputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Column(
       children: <Widget>[
         Container(
@@ -138,9 +109,26 @@ class TextInputField extends StatelessWidget {
             ),
           ),
         ),
+        Container(
+          height: 50,
+          width: 100,
+          child: Center(
+            child: RaisedButton(
+              child: Text(
+                'Go',
+                style: TextStyle(color: Colors.white),
+              ),
+              color: Colors.orange[800],
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FirstPage()),
+                );
+              },
+            ),
+          ),
+        )
       ],
     );
   }
 }
-
-
