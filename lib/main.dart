@@ -123,7 +123,7 @@ class TextInputField extends StatelessWidget{
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => FirstPage()),
+                  MaterialPageRoute(builder: (context) => Entry()),
                 );
               },
             ),

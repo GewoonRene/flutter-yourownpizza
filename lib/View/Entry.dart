@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yourownpizza/View/desserts/desserts.dart';
 import 'package:yourownpizza/View/drinks/drinks.dart';
 import 'package:yourownpizza/View/helpers/Buttons.dart';
 import 'package:yourownpizza/View/helpers/constants.dart';
@@ -6,7 +7,7 @@ import 'package:yourownpizza/View/pizza/pizzabottom.dart';
 import 'package:yourownpizza/View/sideDishes/starters.dart';
 import 'package:yourownpizza/View/Shared/Bottombar.dart';
 
-class FirstPage extends StatelessWidget {
+class Entry extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -180,7 +181,9 @@ class Dessert extends StatelessWidget {
         child: RaisedButton(
           color: Colors.orange[800],
           shape: buttonStyle,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Desserts()));
+          },
           child: Container(
             width: 250,
             height: 50,
