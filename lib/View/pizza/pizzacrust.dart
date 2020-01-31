@@ -3,6 +3,7 @@ import 'package:yourownpizza/View/Shared/Bottombar.dart';
 import 'package:yourownpizza/View/drinks/drinks.dart';
 import 'package:yourownpizza/View/helpers/Buttons.dart';
 import 'package:yourownpizza/View/helpers/constants.dart';
+import 'package:yourownpizza/View/ingredients/ingredients.dart';
 
 class PizzaCrust extends StatelessWidget {
   @override
@@ -135,7 +136,7 @@ class PizzaCrustCard extends StatelessWidget {
                   children: <Widget>[
                     RaisedButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => PizzaCrust()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Ingredients()));
                       },
                       child: Text(
                         'Dik',

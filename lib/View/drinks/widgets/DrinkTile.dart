@@ -26,11 +26,15 @@ import 'package:yourownpizza/View/helpers/constants.dart';
 //  )
 /// ....
 
+// ignore: must_be_immutable
 class GenerateListMap extends StatelessWidget {
 
   /// The data structure with data.
   final List<DrinkTileRow> drinkTileRow;
-  GenerateListMap(this.drinkTileRow);
+  /// [isIngredient] is instance in Ingredient.
+  bool isIngredient;
+
+  GenerateListMap(this.drinkTileRow, [this.isIngredient = false]);
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +97,7 @@ class GenerateListMap extends StatelessWidget {
         children: <Widget>[
           Container(
             margin: EdgeInsets.all(10),
-            child: Icon(Icons.local_drink, size: 80),
+            child: Icon(isIngredient ? Icons.fastfood : Icons.local_drink, size: 80),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
