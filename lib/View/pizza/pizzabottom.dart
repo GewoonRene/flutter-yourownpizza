@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yourownpizza/View/Shared/Bottombar.dart';
+import 'package:yourownpizza/View/drinks/drinks.dart';
+import 'package:yourownpizza/View/helpers/Buttons.dart';
 import 'package:yourownpizza/View/helpers/constants.dart';
 import 'package:yourownpizza/View/pizza/pizzacrust.dart';
 
@@ -43,16 +45,6 @@ class _PizzaBottomState extends State<PizzaBottom> {
                   padding: EdgeInsets.all(20),
                   child: Column(
                     children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 10.0, vertical: 15.0),
-                            child: null,
-                          ),
-                        ],
-                      ),
                       Column(
                         children: <Widget>[
                           Container(
@@ -61,15 +53,25 @@ class _PizzaBottomState extends State<PizzaBottom> {
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: <Widget>[
                                 Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: 20.0, horizontal: 10.0
-                                  ),
-                                  child: Text(
-                                    'Pizza bottoms',
-                                    style: TextStyle(
-                                      fontSize: 30.0,
-                                    ),
-                                    textAlign: TextAlign.center,
+                                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      BackButton(
+                                        color: mainColor,
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
+                                        child: Text(
+                                          'Pizza bodem',
+                                          style: TextStyle(
+                                            fontSize: 30.0,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                      Buttons("Dranken", Drinks()),
+                                    ],
                                   ),
                                 ),
                                 Divider(
@@ -154,7 +156,7 @@ class PizzaBottomCard extends StatelessWidget {
                     RaisedButton(
                       onPressed: () {},
                       child: Text(
-                        'Kind',
+                        'Klein',
                         style: TextStyle(color: Colors.white),
                       ),
                       color: mainColor,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:yourownpizza/View/Shared/Bottombar.dart';
 import 'package:yourownpizza/View/drinks/helpers/DrinksData.dart';
 import 'package:yourownpizza/View/drinks/widgets/DrinkTile.dart';
-import 'package:yourownpizza/View/helpers/Buttons.dart';
+import 'package:yourownpizza/View/helpers/constants.dart';
 
 class Drinks extends StatelessWidget {
 
@@ -34,20 +34,23 @@ class Drinks extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
-                          child: new Buttons("Back")
+                          child: BackButton(
+                            color: mainColor,
+                          )
                         ),
+                        Text(
+                          'Drinks',
+                          style: TextStyle(
+                            fontSize: 30.0,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(width: 30.0,)
                       ],
-                    ),
-                    Text(
-                      'Drinks',
-                      style: TextStyle(
-                        fontSize: 30.0,
-                      ),
-                      textAlign: TextAlign.center,
                     ),
                     Divider(),
                   ],

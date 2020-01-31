@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:yourownpizza/View/Shared/Bottombar.dart';
+import 'package:yourownpizza/View/drinks/drinks.dart';
 import 'package:yourownpizza/View/drinks/widgets/DrinkTile.dart';
 import 'package:yourownpizza/View/helpers/Buttons.dart';
+import 'package:yourownpizza/View/helpers/constants.dart';
 import 'package:yourownpizza/View/ingredients/helpers/IngredientsData.dart';
 
 class Ingredients extends StatelessWidget {
@@ -33,21 +35,27 @@ class Ingredients extends StatelessWidget {
                 margin: EdgeInsets.only(top: 20, left: 50, right: 50),
                 child: Column(
                   children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
-                          child: new Buttons("Back")
-                        ),
-                      ],
-                    ),
-                    Text(
-                      'Ingredients',
-                      style: TextStyle(
-                        fontSize: 30.0,
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          BackButton(
+                            color: mainColor,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(vertical: 17.0, horizontal: 10.0),
+                            child: Text(
+                              'Ingredienten',
+                              style: TextStyle(
+                                fontSize: 30.0,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          Buttons("Dranken", Drinks()),
+                        ],
                       ),
-                      textAlign: TextAlign.center,
                     ),
                     Divider(),
                   ],
