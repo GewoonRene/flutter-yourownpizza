@@ -37,13 +37,25 @@ class Starters extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
                           Padding(
-                            padding: EdgeInsets.symmetric(vertical: 17.0, horizontal: 10.0),
-                            child: Text(
-                              'Voorgerechten',
-                              style: TextStyle(
-                                fontSize: 30.0,
-                              ),
-                              textAlign: TextAlign.center,
+                            padding: EdgeInsets.symmetric(horizontal: 20.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                BackButton(
+                                  color: mainColor,
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 17.0, horizontal: 10.0),
+                                  child: Text(
+                                    'Voorgerechten',
+                                    style: TextStyle(
+                                      fontSize: 30.0,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                                drankenButton,
+                              ],
                             ),
                           ),
                           Divider(
