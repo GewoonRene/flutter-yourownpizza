@@ -154,7 +154,7 @@ class PizzaBottomCard extends StatelessWidget {
                     RaisedButton(
                       onPressed: () {},
                       child: Text(
-                        'Kind',
+                        'Klein',
                         style: TextStyle(color: Colors.white),
                       ),
                       color: mainColor,

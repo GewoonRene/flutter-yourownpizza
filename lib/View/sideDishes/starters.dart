@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:yourownpizza/View/Shared/Bottombar.dart';
+import 'package:yourownpizza/View/drinks/drinks.dart';
+import 'package:yourownpizza/View/helpers/Buttons.dart';
 import 'package:yourownpizza/View/helpers/constants.dart';
 
 class Starters extends StatelessWidget {
@@ -54,7 +56,7 @@ class Starters extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                   ),
                                 ),
-                                drankenButton,
+                                Buttons("Dranken", Drinks()),
                               ],
                             ),
                           ),
