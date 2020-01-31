@@ -12,7 +12,7 @@ class BottomBar extends StatelessWidget {
       child: StreamBuilder(
         stream: Firestore.instance.collection('TableNumber').snapshots(),
         builder: (context, snapshot) {
-//          if (!snapshot.hasData) return Text('Loading data...');
+          if (!snapshot.hasData) return Text('Loading data...');
           return Container(
             height: 150,
             width: 2000,

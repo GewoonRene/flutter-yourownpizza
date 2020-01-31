@@ -1,10 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:yourownpizza/View/Entry.dart';
 import 'package:yourownpizza/View/Shared/Bottombar.dart';
 import 'package:yourownpizza/View/drinks/drinks.dart';
 import 'package:yourownpizza/View/drinks/widgets/DrinkTile.dart';
 import 'package:yourownpizza/View/helpers/Buttons.dart';
 import 'package:yourownpizza/View/helpers/constants.dart';
 import 'package:yourownpizza/View/ingredients/helpers/IngredientsData.dart';
+import 'package:yourownpizza/View/pizza/pizzabottom.dart';
 
 class Ingredients extends StatelessWidget {
 
@@ -69,12 +72,34 @@ class Ingredients extends StatelessWidget {
                   ),
                 ),
               ),
+
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Buttons(
+                        'Nog een pizza',
+                        PizzaBottom()
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Buttons(
+                        'Bestellen',
+                        Entry()
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               Container(
                 child: BottomBar(),
               )
             ],
           ),
-
         ),
       ),
     );
