@@ -35,15 +35,15 @@ class PizzaCrust extends StatelessWidget {
                   padding: EdgeInsets.all(20),
                   child: Column(
                     children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
-                            child: Buttons("Drinks", Drinks()),
-                          ),
-                        ],
-                      ),
+//                      Row(
+//                        mainAxisAlignment: MainAxisAlignment.end,
+//                        children: <Widget>[
+//                          Padding(
+//                            padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
+//                            child: Buttons("Drinks", Drinks()),
+//                          ),
+//                        ],
+//                      ),
                       Column(
                         children: <Widget>[
                           Container(
@@ -52,13 +52,25 @@ class PizzaCrust extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: <Widget>[
                                 Padding(
-                                  padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
-                                  child: Text(
-                                    'Pizza crust',
-                                    style: TextStyle(
-                                      fontSize: 30.0,
-                                    ),
-                                    textAlign: TextAlign.center,
+                                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      BackButton(
+                                        color: mainColor,
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(vertical: 17.0, horizontal: 10.0),
+                                        child: Text(
+                                          'Pizza crust',
+                                          style: TextStyle(
+                                            fontSize: 30.0,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                      Buttons("Dranken", Drinks()),
+                                    ],
                                   ),
                                 ),
                                 Divider(
