@@ -26,7 +26,14 @@ Om flutter in je commandline te kunnen gebruiken unzip de download, en gebruik d
 
 ## Running the tests
 
-Deze is n.v.t, dit word later in het project toegevoegd, zodat je de testen kan runnen
+Dit is de benodigde dev-dependencies.
+```
+ dev_dependencies:
+   flutter_test:
+     sdk: flutter
+```
+
+Dan kan je gwn de test runnen via je IDE! zo simpel is het!
 
 ## Deployment
 

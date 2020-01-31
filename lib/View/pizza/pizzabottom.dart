@@ -49,7 +49,7 @@ class _PizzaBottomState extends State<PizzaBottom> {
                           Padding(
                             padding: EdgeInsets.symmetric(
                                 horizontal: 10.0, vertical: 15.0),
-                            child: drankenButton,
+                            child: null,
                           ),
                         ],
                       ),

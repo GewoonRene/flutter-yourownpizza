@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:yourownpizza/View/Shared/Bottombar.dart';
+import 'package:yourownpizza/View/drinks/drinks.dart';
+import 'package:yourownpizza/View/helpers/Buttons.dart';
 import 'package:yourownpizza/View/helpers/constants.dart';
+import 'package:yourownpizza/View/ingredients/ingredients.dart';
 
 class PizzaCrust extends StatelessWidget {
   @override
@@ -37,7 +40,7 @@ class PizzaCrust extends StatelessWidget {
                         children: <Widget>[
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
-                            child: drankenButton,
+                            child: Buttons("Drinks", Drinks()),
                           ),
                         ],
                       ),
@@ -133,7 +136,7 @@ class PizzaCrustCard extends StatelessWidget {
                   children: <Widget>[
                     RaisedButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => PizzaCrust()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Ingredients()));
                       },
                       child: Text(
                         'Dik',
