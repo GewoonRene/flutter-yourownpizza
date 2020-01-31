@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:yourownpizza/View/Shared/Bottombar.dart';
+import 'package:yourownpizza/View/drinks/drinks.dart';
+import 'package:yourownpizza/View/helpers/Buttons.dart';
 import 'package:yourownpizza/View/helpers/constants.dart';
 
 class Starters extends StatelessWidget {
@@ -37,13 +39,25 @@ class Starters extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
                           Padding(
-                            padding: EdgeInsets.symmetric(vertical: 17.0, horizontal: 10.0),
-                            child: Text(
-                              'Voorgerechten',
-                              style: TextStyle(
-                                fontSize: 30.0,
-                              ),
-                              textAlign: TextAlign.center,
+                            padding: EdgeInsets.symmetric(horizontal: 20.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                BackButton(
+                                  color: mainColor,
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 17.0, horizontal: 10.0),
+                                  child: Text(
+                                    'Voorgerechten',
+                                    style: TextStyle(
+                                      fontSize: 30.0,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                                Buttons("Dranken", Drinks()),
+                              ],
                             ),
                           ),
                           Divider(
