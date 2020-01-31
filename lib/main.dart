@@ -1,7 +1,6 @@
 import 'package:yourownpizza/View/Entry.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:yourownpizza/View/helpers/constants.dart';
 
 void main() => runApp(
     MaterialApp(
@@ -83,9 +82,11 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class TextInputField extends StatelessWidget {
+class TextInputField extends StatelessWidget{
+
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return Column(
       children: <Widget>[
         Container(
@@ -132,3 +133,5 @@ class TextInputField extends StatelessWidget {
     );
   }
 }
+
+

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:yourownpizza/View/Shared/Bottombar.dart';
+import 'package:yourownpizza/View/drinks/drinks.dart';
+import 'package:yourownpizza/View/helpers/Buttons.dart';
 import 'package:yourownpizza/View/helpers/constants.dart';
+import 'package:yourownpizza/View/ingredients/ingredients.dart';
 
 class PizzaCrust extends StatelessWidget {
   @override
@@ -37,31 +40,31 @@ class PizzaCrust extends StatelessWidget {
                         children: <Widget>[
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
-                            child: drankenButton,
+                            child: Buttons("Drinks", Drinks()),
                           ),
                         ],
                       ),
                       Column(
                         children: <Widget>[
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: <Widget>[
-                              Padding(
-                                padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
-                                child: Text(
-                                  'Pizza crust',
-                                  style: TextStyle(
-                                    fontSize: 30.0,
+                          Container(
+                            margin: EdgeInsets.only(bottom: 20.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: <Widget>[
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
+                                  child: Text(
+                                    'Pizza crust',
+                                    style: TextStyle(
+                                      fontSize: 30.0,
+                                    ),
+                                    textAlign: TextAlign.center,
                                   ),
-                                  textAlign: TextAlign.center,
                                 ),
-                              ),
-                              Divider(
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 30.0,
+                                Divider(
+                                ),
+                              ],
+                            ),
                           ),
                           Column(
                             children: <Widget>[
@@ -118,12 +121,9 @@ class PizzaCrustCard extends StatelessWidget {
     return Container(
       child: Column(
         children: <Widget>[
-          SizedBox(
-            height: 30.0,
-          ),
-          Text('$type'),
-          SizedBox(
-            height: 20.0,
+          Container(
+            margin: EdgeInsets.only(top: 30.0, bottom: 20.0),
+              child: Text('$type')
           ),
           Container(
             decoration: bottomSheet,
@@ -136,7 +136,7 @@ class PizzaCrustCard extends StatelessWidget {
                   children: <Widget>[
                     RaisedButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => PizzaCrust()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Ingredients()));
                       },
                       child: Text(
                         'Dik',

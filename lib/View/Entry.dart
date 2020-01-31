@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:yourownpizza/View/drinks/drinks.dart';
+import 'package:yourownpizza/View/helpers/Buttons.dart';
+import 'package:yourownpizza/View/helpers/constants.dart';
 import 'package:yourownpizza/View/pizza/pizzabottom.dart';
-import '../View/Shared/Bottombar.dart';
+import 'package:yourownpizza/View/sideDishes/starters.dart';
+import 'package:yourownpizza/View/Shared/Bottombar.dart';
 
 class FirstPage extends StatelessWidget {
   @override
@@ -45,7 +49,7 @@ class FirstPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 200,
+              height: 100,
             ),
             Expanded(
               child: Container(
@@ -56,6 +60,16 @@ class FirstPage extends StatelessWidget {
                     topLeft: Radius.circular(60),
                     topRight: Radius.circular(60),
                   ),
+                ),
+                child:   Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 40.0, vertical: 15.0),
+                      child: Buttons("Drinks", Drinks()),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -81,9 +95,7 @@ class FirstPage extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              child: BottomBar(),
-            ),
+            BottomBar(),
           ],
         ),
       ),
@@ -101,9 +113,10 @@ class Entree extends StatelessWidget {
       child: Center(
         child: RaisedButton(
           color: Colors.orange[800],
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-          onPressed: () {},
+          shape: buttonStyle,
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Starters()));
+          },
           child: Container(
             width: 250,
             height: 50,
@@ -133,8 +146,7 @@ class Pizza extends StatelessWidget {
       child: Center(
         child: RaisedButton(
           color: Colors.orange[800],
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          shape: buttonStyle,
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => PizzaBottom()));
           },
@@ -167,8 +179,7 @@ class Dessert extends StatelessWidget {
       child: Center(
         child: RaisedButton(
           color: Colors.orange[800],
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          shape: buttonStyle,
           onPressed: () {},
           child: Container(
             width: 250,
