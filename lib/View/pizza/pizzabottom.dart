@@ -45,16 +45,6 @@ class _PizzaBottomState extends State<PizzaBottom> {
                   padding: EdgeInsets.all(20),
                   child: Column(
                     children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 10.0, vertical: 15.0),
-                            child: null,
-                          ),
-                        ],
-                      ),
                       Column(
                         children: <Widget>[
                           Container(
@@ -71,7 +61,7 @@ class _PizzaBottomState extends State<PizzaBottom> {
                                         color: mainColor,
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.symmetric(vertical: 17.0, horizontal: 10.0),
+                                        padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
                                         child: Text(
                                           'Pizza bodem',
                                           style: TextStyle(
