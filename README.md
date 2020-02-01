@@ -2,7 +2,8 @@
 
 Dit is een mobiele app die digitaal bestellingen kan afnemen van de klanten voor het restaurant Your Own Pizza.
 
-[![**BEKIJK DE PREVIEW**](https://img.youtube.com/vi/9Ts7Dz8QDSY/maxresdefault.jpg)](https://youtu.be/9Ts7Dz8QDSY)
+**BEKIJK DE PREVIEW**
+[![](https://img.youtube.com/vi/9Ts7Dz8QDSY/maxresdefault.jpg)](https://youtu.be/9Ts7Dz8QDSY)
 
 
 
