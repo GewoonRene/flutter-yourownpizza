@@ -2,6 +2,10 @@
 
 Dit is een mobiele app die digitaal bestellingen kan afnemen van de klanten voor het restaurant Your Own Pizza.
 
+[![**BEKIJK DE PREVIEW**](https://www.youtube.com/watch?v=9Ts7Dz8QDSY)](https://youtu.be/9Ts7Dz8QDSY)
+
+
+
 ## Project Navigation
 
 * **[ProjectPlan](https://github.com/GewoonRene/yourownpizza/projects/3)** 
