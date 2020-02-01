@@ -32,7 +32,7 @@ Dit is de benodigde dev-dependencies.
    flutter_test:
      sdk: flutter
 ```
-* **[Testing rapport](hhttps://github.com/GewoonRene/yourownpizza/blob/documentation/test-rapport/documentation/Test%20Rapport%20.pdf)**
+* **[Testing rapport](https://github.com/GewoonRene/yourownpizza/blob/master/documentation/Test%20Rapport%20.pdf)**
 
 Dan kan je gwn de test runnen via je IDE! zo simpel is het!
 
